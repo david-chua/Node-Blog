@@ -9,11 +9,8 @@ const errorHelper = (status, message, res) => {
 }
 
 // Custom Middle Ware
-const nameUppercaseMiddleware = (req,res,next) => {
-  let { name } = req.body;
-    console.log("Name",name);
-    name = name.toUpperCase();
-    console.log(name);
+function nameUppercaseMiddleware(req,res,next){
+  req.body.name = req.body.name.toUpperCase();
     next();
 };
 
